@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <!--one item behalfs one contacted person.-->
+    <item>
+        <ip_addr>miaomaio</ip_addr>
+        <data_port>Shaanxi Xispon</data_port>
+        <update_port>13759911917</update_port>
+    </item>
+</config>

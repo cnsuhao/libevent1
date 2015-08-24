@@ -1,0 +1,11 @@
+1.8月份学习计划
+网络库:ACE 和 libevent gsoap
+数据库:mysql oracle
+日志操作:log4cpp
+读取配置文件
+内存池:nedmalloc
+缓存库:memcache
+脚本:shell
+todo:
+gsoap
+xml解析库:tinyxml rapidxml
