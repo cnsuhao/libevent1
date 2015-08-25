@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ServerInfo>
+    <!--服务器配置信息-->
+    <ServerName>新服务器</ServerName>
+    <ServerIP>192.168.14.28</ServerIP>
+    <ListenPortID>8080</ListenPortID>
+    <PortsList Num="10">
+        <Port>
+            <PortID>20001</PortID>
+            <MaxConnection>60</MaxConnection>
+        </Port>
+        <Port>
+            <PortID>20002</PortID>
+            <MaxConnection>60</MaxConnection>
+        </Port>
+        <Port>
+            <PortID>20003</PortID>
+            <MaxConnection>60</MaxConnection>
+        </Port>
+        <Port>
+            <PortID>20004</PortID>
+            <MaxConnection>60</MaxConnection>
+        </Port>
+        <Port>
+            <PortID>20005</PortID>
+            <MaxConnection>60</MaxConnection>
+        </Port>
+    </PortsList>
+</ServerInfo>
