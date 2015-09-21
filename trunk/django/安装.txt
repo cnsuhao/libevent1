@@ -1,0 +1,5 @@
+1.pip 安装 
+	sudo apt-get install python3-setuptools
+	sudo easy_install3 pip
+2.django安装
+	sudo pip3 install Django
