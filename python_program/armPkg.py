@@ -3,14 +3,16 @@ import os
 import struct
 ##packet_start=bytearray.fromhex('dd cc bb aa')
 #print(type(packet_end))
-file='C:\QcOSD.txt'
-def arm_package_update_file_data(file_addr):
+
+def arm_package_update_file_data(datain):
     start='start'
     packettype='3'
     bytes=struct.pack('i',1024)
-    data=''
+    data= str(datain, encoding = "utf-8")
     end='end'
     return start+'|'+packettype+'|'+data_lenth+'|'+data+'|'+end
+def file_read_send(file):
+    file_read=open(file,'rb')
 def arm_package_update_assign(file_addr,update_mod,version_in):
     start='start'
     packettype='1'
@@ -36,8 +38,8 @@ def get_filesize(filePath):
     for r,ds,fs in os.walk(filePath):
         for f in fs:
             size=os.path.getsize(os.path.join(r,f))
-
-if __name__ == "__main__":    
+if __name__ == "__main__":
+    file='D:\cyp\matlab\pic_a'
     print(arm_package_update_file_data(file))
     print(arm_package_update_assign(file,'fpga','v11'))    
     input()
