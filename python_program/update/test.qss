@@ -1,0 +1,42 @@
+QPushButton#sendButton {
+    border-radius: 2px;
+    border: 1px solid rgb(89, 153, 48);
+    background:transparent;
+    color: green;
+}
+
+QPushButton#sendButton:hover {
+    background: #86BA10;
+}
+QPushButton#pushButton {
+    border-radius: 2px;
+    border: 1px solid rgb(89, 153, 48);
+    background:transparent;
+    color: green;
+}
+
+QPushButton#pushButton:hover {
+    background: #86BA10;
+}
+
+QPushButton#openFilebutton {
+    border-radius: 2px;
+    border: 1px solid rgb(89, 153, 48);
+    background:transparent;
+    color: green;
+}
+
+QPushButton#openFilebutton:hover {
+    background: #86BA10;
+}
+QWidget#centralWidget{
+    border-radius: 2px;
+    border: 1px solid rgb(89, 153, 48);
+    background:rgba(200, 54, 54, 0.5);
+    color: green;
+}
+QMainWindow#MainWindow{
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                 stop: 0 #113845,
+                                 stop: 1.0 #15A8FF);
+    }

@@ -5,7 +5,7 @@
 # Created by: PyQt4 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
-import random
+#import random
 from PyQt4 import QtCore, QtGui, QtNetwork
 import armPkg
 try:
@@ -24,8 +24,6 @@ except AttributeError:
         
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        self.socketlist=[]
-        
         self.fortunes = (
         "You've been leading a dog's life. Stay off the furniture.",
         "You've got to think about tomorrow.",
@@ -35,11 +33,12 @@ class Ui_MainWindow(object):
         "You cannot kill time without injuring eternity.",
         "Computers are not intelligent. They only think they are.")
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(400, 300)
+        MainWindow.setFixedSize(400, 300)
+        print(type(MainWindow))
         
         self.centralWidget = QtGui.QWidget(MainWindow)
         self.centralWidget.setObjectName(_fromUtf8("centralWidget"))
-        self.centralWidget.setWindowIcon(QtGui.QIcon(QtGui.QPixmap(":/Images/cubed.png")));
+        self.centralWidget.setWindowIcon(QtGui.QIcon(QtGui.QPixmap("icons/cubed.png")));
         self.textBrowser = QtGui.QTextBrowser(self.centralWidget)
         self.textBrowser.setGeometry(QtCore.QRect(90, 10, 300,100))
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
@@ -49,7 +48,7 @@ class Ui_MainWindow(object):
 
         self.sendButton = QtGui.QPushButton(self.centralWidget)
         self.sendButton.setGeometry(QtCore.QRect(10, 10, 75, 23))
-        self.sendButton.setObjectName(_fromUtf8("SendButton"))
+        self.sendButton.setObjectName(_fromUtf8("sendButton"))
         
         self.openFileNameButton = QtGui.QPushButton(self.centralWidget)
         self.openFileNameButton.setGeometry(QtCore.QRect(10, 40, 75, 23))
@@ -61,7 +60,7 @@ class Ui_MainWindow(object):
         #self.socketchat.horizontalHeaderItem(0).setBackgroundColor(QtGui.QColor(255,255,255))
         self.socketchat.setHorizontalHeaderItem(1, QtGui.QTableWidgetItem("IP ADDRESS"))
         self.socketchat.setHorizontalHeaderItem(2, QtGui.QTableWidgetItem("PORT"))
-        self.socketchat.autoFillBackground()
+        #self.socketchat.autoFillBackground()
         self.socketchat.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
         self.socketchat.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers);
         self.socketchat.verticalHeader().setVisible(0)
@@ -74,9 +73,11 @@ class Ui_MainWindow(object):
         self.native = QtGui.QCheckBox()
         self.native.setText("Use native file dialog.")
         self.native.setChecked(True)
-        
-        
         MainWindow.setCentralWidget(self.centralWidget)
+        
+        
+        self.socketlist=[]
+        self.validlist=[]
         self.tcp=QtNetwork.QTcpServer()
         self.tcp.listen(QtNetwork.QHostAddress.Any, 9001);
         #self.tcp.waitForNewConnection(-1)
@@ -101,9 +102,19 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "清空", None))
         self.sendButton.setText(_translate("MainWindow", "发送", None))
         self.openFileNameButton.setText(_translate("MainWindow", "打开文件", None))
+        file = QtCore.QFile('new.qss')
+        file.open(QtCore.QFile.ReadOnly)
+        styleSheet = file.readAll()
+        print(type(styleSheet))
+        styleSheet = str(styleSheet, encoding='utf8')
+        QtGui.qApp.setStyleSheet(styleSheet)
+        
+        
+        
     def ConnectUpdate(self):
         listlen=len(self.socketlist)
-        self.socketchat.clear()
+        #清空表格内容不包括表头
+        self.socketchat.clearContents()
         if listlen == 0:
             return
         for c in range(listlen):

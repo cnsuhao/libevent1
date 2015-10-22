@@ -1,0 +1,35 @@
+*{
+  font-size:13px;
+  color:#FFBBFF;
+  font-family:"Microsoft YaHei";
+}
+CallWidget QLineEdit#telEdt
+{
+  font-size:24px;
+}
+/* === QHeaderView === */
+QHeaderView::section {
+    background: #222222;
+    border: 0;
+    color: #BBBBBB;
+    padding: 3px 0 3px 4px;
+}
+QTableView::item{
+    font-size:14px;
+    color:#FFC125;
+    font-family:"Microsoft YaHei";
+}
+QTableView::item:!hover {
+    background: #15A8FF;
+}
+QMainWindow,QDialog{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                 stop: 0 #113845,
+                                 stop: 1.0 #15A8FF);
+}
+QWidget{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+                                 stop: 0 #113845,
+                                 stop: 1.0 #15A8FF);
+}
+

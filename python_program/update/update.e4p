@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project update -->
-<!-- Saved: 2015-10-21, 23:22:34 -->
+<!-- Saved: 2015-10-22, 11:12:00 -->
 <!-- Copyright (C) 2015 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -16,6 +16,8 @@
   <Sources>
     <Source>Ui_firstui.py</Source>
     <Source>armPkg.py</Source>
+    <Source>test.qss</Source>
+    <Source>new.qss</Source>
   </Sources>
   <Forms>
     <Form>firstui.ui</Form>
